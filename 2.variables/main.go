@@ -2,7 +2,13 @@ package main
 
 import "fmt"
 
+// var helloworld string = "Hello World" // valid
+var helloworld = "Hello World" // valid
+
+// helloworld := "Hello World" // not valid
+
 func main() {
+	fmt.Println(helloworld)
 	/*
 		Declare a new variable & assing a value - initialization of a variable
 		we can use ':=' to create a new variable & assign value to it
