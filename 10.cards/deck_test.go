@@ -23,7 +23,9 @@ func TestNewDeck(t *testing.T) {
 }
 
 func TestDeckFileSavingAndReading(t *testing.T) {
+	// test cleanup in case old test case execution failed
 	os.Remove("_testingdeck")
+
 	d := newDeck()
 	d.saveToFile("_testingdeck")
 
@@ -33,4 +35,6 @@ func TestDeckFileSavingAndReading(t *testing.T) {
 		t.Errorf("The new deck length should have been 16 but got %v", len(d))
 	}
 
+	// test cleanup
+	os.Remove("_testingdeck")
 }
