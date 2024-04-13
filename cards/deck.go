@@ -2,8 +2,10 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
 	"os"
 	"strings"
+	"time"
 )
 
 type deck []string
@@ -32,6 +34,19 @@ func newDeck() deck {
 		}
 	}
 	return cards
+}
+
+func (d deck) shuffle() {
+	// seeding
+	source := rand.NewSource(time.Now().UnixNano())
+	r := rand.New(source)
+
+	for i := range d {
+		newposition := r.Intn(len(d) - 1)
+
+		// the rhs is completely evaluated first and then assignment happens
+		d[i], d[newposition] = d[newposition], d[i]
+	}
 }
 
 func (d deck) print() {

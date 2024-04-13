@@ -15,6 +15,9 @@ func main() {
 	fmt.Println("Printing the remaining deck from file")
 	remainingDeck = readDeckFromFile("remainingDeck")
 	remainingDeck.print()
+	fmt.Println("After shuffling!")
+	cards.shuffle()
+	cards.print()
 }
 
 /*
