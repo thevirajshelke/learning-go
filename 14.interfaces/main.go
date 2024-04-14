@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// This is of 'interface type' i.e. we cannot create a value out of it
 type bot interface {
 	getGreeting() string
 }
@@ -10,6 +11,7 @@ type bot interface {
 	Since englishBot and marathiBot have a receiver function 'getGreeting' which returns a string
 	they automatically also become of type 'bot'
 */
+// This is of 'concrete type' i.e. we can create a value out of it
 type englishBot struct{}
 type marathiBot struct{}
 
